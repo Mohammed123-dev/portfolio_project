@@ -22,14 +22,16 @@ const Projects = () => {
       name: "AgriPredict",
       image: "https://www.agripredict.com/landing/hero.webp",
       description:
-        "Built an AI-powered crop recommendation and plant disease detection system using Python, Machine Learning, and Deep Learning to help farmers make better agricultural decisions."
+        "Built an AI-powered crop recommendation and plant disease detection system using Python, Machine Learning, and Deep Learning to help farmers make better agricultural decisions.",
+      link: "https://agripredict-major-project-05.onrender.com"
     },
-     {
+    {
       id: 2,
       name: "Bank Management System",
       image: "https://dengsolutions.com/deng_A478Erd/images/bank%20management.jpg",
       description:
-         "Developed a Smart Banking Management System using Core Java and OOP, with features for customer and account management, deposits, withdrawals, transfers, balance checking, transaction history, exception handling, collections, and Java Streams."
+        "Developed a Smart Banking Management System using Core Java and OOP, with features for customer and account management, deposits, withdrawals, transfers, balance checking, transaction history, exception handling, collections, and Java Streams.",
+      link: "https://banking-maibu.netlify.app"
     }
   ];
 
@@ -129,9 +131,8 @@ const Projects = () => {
 
         <div
           style={styles.projectGrid}
-          className={`project-grid ${
-            animateCards ? 'cards-visible' : ''
-          }`}
+          className={`project-grid ${animateCards ? 'cards-visible' : ''
+            }`}
         >
           {projects.map((project, index) => (
             <div
@@ -186,6 +187,18 @@ const Projects = () => {
               <p style={styles.description}>
                 {project.description}
               </p>
+
+              {/* Live Demo Button */}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={styles.linkButton}
+                >
+                  View Live Demo →
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -618,6 +631,12 @@ const Projects = () => {
           transition: transform 0.4s ease;
         }
 
+        .card a:hover {
+          background-color: #4338ca !important;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        }
+
         /* Spinner */
 
         @keyframes spin {
@@ -772,6 +791,19 @@ const styles = {
     fontSize: '0.95rem',
     color: '#555',
     lineHeight: '1.5'
+  },
+
+  linkButton: {
+    display: 'inline-block',
+    marginTop: '14px',
+    padding: '8px 16px',
+    backgroundColor: '#4f46e5',
+    color: '#ffffff',
+    textDecoration: 'none',
+    borderRadius: '8px',
+    fontSize: '0.9rem',
+    fontWeight: '500',
+    transition: 'all 0.3s ease'
   }
 };
 
